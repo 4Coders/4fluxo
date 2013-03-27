@@ -767,8 +767,8 @@ div.subnav-fixed{top:50px;}
 .add-on [class^="icon-"]{margin-left:5px;}
 .table th,.table td,.table tbody+tbody{border-top:0px solid transparent;}
 .table-bordered{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;}
-legend,label,.help-block,.input-file{color:rgba(255, 255, 255, 0.9);border:0px solid transparent;}
-input,textarea,.uneditable-input{border:0px solid transparent;padding:10px;}
+legend,label,.help-block,.input-file{color:#666;border:0px solid transparent;}
+input,textarea,.uneditable-input{border:1px solid #666;padding:10px;}
 .uneditable-input{padding-bottom:30px;}
 select{border:0px solid transparent;}
 button{margin-left:12px;}
