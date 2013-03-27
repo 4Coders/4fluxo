@@ -18,11 +18,16 @@ $(document).ready(function() {
 	cl('ready');
 	App.start();
 
-	var model = new UserModel();
-	model.set('name', 'Rafael Pereira');
+	var models = [],
+		user = null;
 
-	var model2 = new UserModel();
-	model2.set('name', 'Pereira');
-
-	App.view.collection.add([model, model2]);
+	$.get('/users.json', function(data) {
+		data.forEach(function(item) {
+			if(item.user) {
+				user = item.user
+				models.push(new UserModel({name: user.name, email: user.email}));
+			}
+		});
+		App.view.collection.add(models);
+	});
 });
