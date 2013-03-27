@@ -15,6 +15,9 @@ git clone git@github.com:4Coders/4fluxo.git
 After clone we need build the dependencies using:
 <b>npm install</b>
 
+Install mongodb
+http://www.mongodb.org/downloads
+
 on the project root folder.
 
 RUNNING:

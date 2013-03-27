@@ -4,12 +4,17 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , mongoq = require('mongoq');
+
+// Configurando a execução do banco MongoDB
+var   DB = 'db_test'
+    , db = mongoq(DB)
+    , users = db.collection('users');
 
 var app = module.exports = express();
 
 // Configuration
-
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
@@ -29,8 +34,30 @@ app.configure('production', function(){
 });
 
 // Routes
-
 app.get('/', routes.index);
+
+app.get('/users', routes.users);
+
+app.get('/users/add', routes.users.add);
+
+app.get('/users/edit/:id?', function(req, res){
+  res.render('users/edit', { title: '4fluxo' })
+});
+
+// Rota GET para listar os usuários
+app.get('/users.json', function(req, res) {
+   users.find().toArray(function(err, result){
+      res.send(result);
+   });
+});
+
+// Users Posts
+app.post('/users', function(req, res) {
+   var user = req.body.user;
+   console.log(user);
+   users.insert({user : user});
+   res.send(true);
+});
 
 app.listen(3000, function(){
   console.log("express-bootstrap app running");
