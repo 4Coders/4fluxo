@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 	var models = [],
 		user = null;
-
+	cl(new UserModel({}).url());
 	$.get('/users.json', function(data) {
 		data.forEach(function(item) {
 			if(item.name && item.email) {
