@@ -23,9 +23,9 @@ $(document).ready(function() {
 
 	$.get('/users.json', function(data) {
 		data.forEach(function(item) {
-			if(item.user) {
+			if(item.name && item.email) {
 				user = item.user
-				models.push(new UserModel({name: user.name, email: user.email}));
+				models.push(new UserModel({name: item.name, email: item.email}));
 			}
 		});
 		App.view.collection.add(models);

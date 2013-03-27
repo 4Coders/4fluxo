@@ -10,6 +10,12 @@ $(document).ready(function() {
 
 	$('#user_form').on('click', 'a', function() {
 		var model = new UserModel({user: {'name': $('input[name="name"]').val(), 'email': $('input[name="email"]').val()}})
-		$.post('/users', model.toJSON());
+		$.post(
+			'/users', 
+			model.toJSON(),
+			function() {
+				$('#flash-message').html("FEITOOOOO!").fadeIn();
+			}
+		);
 	});
 });
