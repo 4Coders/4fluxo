@@ -3,23 +3,23 @@
 
 REQUIREMENTS:
 ======
-You will need node.js and npm package manager.
-sudo apt-get install node npm
+You will need node.js and npm package manager.<br />
+sudo apt-get install node npm<br />
 
-or get node and install from source code:
+or get node and install from source code:<br /><br />
+
+Install mongodb<br />
+http://www.mongodb.org/downloads
 
 INSTALATION:
 ======
-git clone git@github.com:4Coders/4fluxo.git
+git clone git@github.com:4Coders/4fluxo.git<br /><br />
 
-After clone we need build the dependencies using:
+After clone we need build the dependencies using:<br />
 <b>npm install</b>
-
-Install mongodb
-http://www.mongodb.org/downloads
-
+<br />
 on the project root folder.
-
+<br /><br />
 RUNNING:
 ======
 on root app folder:

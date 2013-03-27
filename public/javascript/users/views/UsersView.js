@@ -19,7 +19,6 @@ var UsersView = Backbone.View.extend({
 	 },
 
 	 renderOne: function(user){
-	 	cl('renderOne', user);
 	   var userView = new UserView({});
 	   userView.model = user;
 	   userView.render().$el.appendTo(this.$el)
